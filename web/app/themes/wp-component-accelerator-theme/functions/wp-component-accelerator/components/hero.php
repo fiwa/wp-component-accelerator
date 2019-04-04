@@ -3,10 +3,10 @@
  * Component hero
  *
  * @param array $args {
-        Optional, array of arguments.
-
-        @type string         container          'Accepts 'div' or 'a'.
-        ...
+ *       Optional, array of arguments.
+ *
+ *       @type string         container         'Accepts 'div' or 'a'.
+ *       ...
  * }
  */
 
