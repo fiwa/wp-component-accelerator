@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Enqueue parent stylesheet
+ * Enqueue stylesheets
  */
 add_action('wp_enqueue_scripts', function() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
@@ -9,7 +9,7 @@ add_action('wp_enqueue_scripts', function() {
 });
 
 /**
- * Load functions parts
+ * Load function parts
  */
 load_functions(
     array(

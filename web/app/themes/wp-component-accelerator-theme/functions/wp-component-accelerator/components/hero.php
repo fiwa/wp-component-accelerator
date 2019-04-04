@@ -3,7 +3,7 @@
  * Component hero
  */
 
-// Setup default args
+// Setup default arguments
 $defaults = array(
     'container'             => 'div',
     'container_class'       => 'hero',
@@ -17,11 +17,12 @@ $defaults = array(
 
 $args = wp_parse_args($args, $defaults);
 
+// Invalid value, fall back to default
 if (!in_array($args['container'], array('div', 'a'), true)) {
-    // Invalid value, fall back to default
     $args['container'] = $defaults['container'];
 }
 
+// Invalid values, fall back to default
 if ('a' === $args['container'] && wp_http_validate_url($args['link'])) {
     $args['container'] = 'a';
     $args['link'] = sprintf('href="%s"', esc_url($args['link']));
@@ -52,7 +53,7 @@ $wpca_component .= sprintf(
     $args['description'],
 );
 
-// Close component vontainer
+// Close component container
 $wpca_component .= sprintf(
     '</%1$s>',
     $args['container']
