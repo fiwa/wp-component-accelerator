@@ -20,3 +20,12 @@ web/.htaccess
 
 # WP-CLI
 wp-cli.local.yml
+
+# NPM, GULP etc
+web/app/themes/**/node_modules/**
+web/app/themes/**/maps/style.css.map
+
+# SASS generated folders
+.cache/*
+.sass-cache/*
+.false/*
