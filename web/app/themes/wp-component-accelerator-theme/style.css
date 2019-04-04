@@ -1,0 +1,20 @@
+/*
+ Theme Name:   WP Component Accelerator Example Theme
+ Theme URI:    #
+ Description:  An example theme to demo functionality in the plugin WP Component Accelerator
+ Author:       Filip Wastman
+ Author URI:   #
+ Template:     twentynineteen
+*/
+
+pre {
+    border: 1px solid #6ff983;
+    background-color: #d1ffd7;
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+.component-container {
+    max-width: 90%;
+    margin: 0 auto;
+}
