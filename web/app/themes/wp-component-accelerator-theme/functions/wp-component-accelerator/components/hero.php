@@ -13,17 +13,17 @@
 // Setup default arguments
 $defaults = array(
     'container'                 => 'div',
-    'container_class'           => 'hero',
-    'content_class'             => 'hero__content',
+    'container_class'           => 'Hero',
+    'content_class'             => 'Hero__content',
     'title'                     => __('Hero default title'),
     'title_block_format'        => 'h1',
-    'title_class'               => 'hero__title',
+    'title_class'               => 'Hero__title',
     'image_container'           => 'figure',
-    'image_container_class'     => 'hero__image',
+    'image_container_class'     => 'Hero__image',
     'image_id'                  => '',
     'image_format'              => 'large',
     'description'               => '',
-    'description_class'         => 'hero__description',
+    'description_class'         => 'Hero__description',
     'link'                      => '',
 );
 
@@ -69,10 +69,11 @@ if ($image_el) {
         esc_attr($args['image_container_class']),
         $image_el
     );
+    $args['container_class'] .= ' '. $args['container_class'] . '--has-image';
 }
 ?>
 
-<<?php echo sprintf('%1$s %2$s class="%3$s"', esc_attr($args['container']), esc_url($args['link']), esc_attr($args['container_class'])); ?>>
+<<?php echo sprintf('%1$s %2$s class="%3$s"', esc_attr($args['container']), $args['link'], esc_attr($args['container_class'])); ?>>
 
     <div class="<?php echo esc_attr($args['content_class']); ?>">
         <?php echo $title; ?>

@@ -1,0 +1,69 @@
+.Hero {
+  background-color: #797d81;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 30vh;
+
+  &__content {
+    text-align: center;
+    position: relative;
+    flex: 80% 0 0;
+    z-index: 2;
+  }
+
+  &__title {
+    color: #c2c7cc;
+
+    .Hero--has-image & {
+        color: #fff;
+    }
+
+    // Remove styling from Twenty Nineteen theme
+    &::before,
+    &::after {
+        display: none !important;
+    }
+  }
+
+  &__content {
+    color: #c2c7cc;
+
+    .Hero--has-image & {
+        color: #fff;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    z-index: 1;
+    object-fit: cover;
+
+    &::before {
+        content: "";
+        background-color: #797d81;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        z-index: 2;
+    }
+
+    img {
+        position: relative;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+  }
+}
