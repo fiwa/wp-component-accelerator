@@ -50,6 +50,28 @@ echo wpca_get_component(
                 echo wpca_get_component(
                     'hero',
                     array(
+                        'title'             => __('Hero with image'),
+                        'image_id'          => 5,
+                        'image_format'      => 'full',
+                        'description'       => '<p>My custom hero description n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
+                    )
+                );
+                ?>
+<pre>
+echo wpca_get_component(
+    'hero',
+    array(
+        ...
+        'image_id'          => 5,
+        'image_format'      => 'full',
+    )
+);
+</pre>
+
+                <?php
+                echo wpca_get_component(
+                    'hero',
+                    array(
                         'title'                 => __('My custom hero title'),
                         'title_block_format'    => 'h4',
                         'description'           => '<p>My custom hero description n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
@@ -85,7 +107,7 @@ echo wpca_get_component(
 echo wpca_get_component(
     'hero',
     array(
-        'title'         => __('Hero without description'),
+        ...
         'container'     => 'a',
         'link'          => 'this is not a link',
     )
