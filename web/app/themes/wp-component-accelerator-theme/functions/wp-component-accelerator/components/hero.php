@@ -7,10 +7,11 @@
 $defaults = array(
     'container'             => 'div',
     'container_class'       => 'hero',
+    'content_class'         => 'hero__content',
     'title'                 => __('Hero default title'),
     'title_block_format'    => 'h1',
     'title_class'           => 'hero__title',
-    'description'           => apply_filters('the_content', __('Hero default description.')),
+    'description'           => '',
     'description_class'     => 'hero__description',
     'link'                  => '',
 );
@@ -31,33 +32,28 @@ if ('a' === $args['container'] && wp_http_validate_url($args['link'])) {
     $args['link'] = $defaults['link'];
 }
 
-// Open component container
-$wpca_component = sprintf(
-    '<%1$s %2$s class="%3$s">',
-    $args['container'],
-    $args['link'],
-    $args['container_class'],
-);
-
 // Component content
-$wpca_component .= sprintf(
+$title = sprintf(
     '<%1$s class="%2$s">%3$s</%1$s>',
     esc_attr($args['title_block_format']),
     esc_attr($args['title_class']),
     esc_html($args['title']),
 );
 
-$wpca_component .= sprintf(
+$description = sprintf(
     '<div class="%1$s">%2$s</div>',
     esc_attr($args['description_class']),
     $args['description'],
 );
+?>
 
-// Close component container
-$wpca_component .= sprintf(
-    '</%1$s>',
-    $args['container']
-);
+<<?php echo sprintf('%1$s %2$s class="%3$s"', esc_attr($args['container']), esc_url($args['link']), esc_attr($args['container_class'])); ?>>
 
-// Print component
-echo $wpca_component;
+    <div class="<?php echo esc_attr($args['content_class']); ?>">
+
+        <?php echo $title; ?>
+        <?php echo $description; ?>
+
+    </div>
+
+</<?php echo esc_attr($args['container']); ?>>

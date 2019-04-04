@@ -24,6 +24,7 @@ get_header();
                     'hero',
                     array(
                         'container_class'   => 'my-custom-container-class',
+                        'content_class'     => 'my-custom-content-class',
                         'title'             => 'My custom hero title',
                         'title_class'       => 'my-custom-title-class',
                         'description'       => '<p>My custom hero description n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
@@ -36,6 +37,7 @@ echo wpca_get_component(
     'hero',
     array(
         'container_class'   => 'my-custom-container-class',
+        'content_class'     => 'my-custom-content-class',
         'title'             => 'My custom hero title',
         'title_class'       => 'my-custom-title-class',
         'description'       => '&lt;p&gt;My custom hero description...&lt;/p&gt;',
@@ -74,7 +76,6 @@ echo wpca_get_component(
                     'hero',
                     array(
                         'title'         => __('Hero without description'),
-                        'description'   => false,
                         'container'     => 'a',
                         'link'          => 'this is not a link',
                     )
@@ -85,7 +86,6 @@ echo wpca_get_component(
     'hero',
     array(
         'title'         => __('Hero without description'),
-        'description'   => false,
         'container'     => 'a',
         'link'          => 'this is not a link',
     )
