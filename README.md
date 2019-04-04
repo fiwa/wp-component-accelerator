@@ -1,0 +1,1 @@
+# wp-component-accelerator
