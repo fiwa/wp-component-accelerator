@@ -25,8 +25,7 @@ get_header();
                     array(
                         'container_class'   => 'my-custom-container-class',
                         'content_class'     => 'my-custom-content-class',
-                        'title'             => 'My custom hero title',
-                        'title_class'       => 'my-custom-title-class',
+                        'title'             => '<h1 class="my-custom-title-class">My custom hero title</h1>',
                         'description'       => '<p>My custom hero description n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
                         'description_class' => 'my-custom-description-class',
                     )
@@ -38,8 +37,7 @@ echo wpca_get_component(
     array(
         'container_class'   => 'my-custom-container-class',
         'content_class'     => 'my-custom-content-class',
-        'title'             => 'My custom hero title',
-        'title_class'       => 'my-custom-title-class',
+        'title'             => '&lt;h1&gt; class="my-custom-title-class">My custom hero title&lt;/h1&gt;',
         'description'       => '&lt;p&gt;My custom hero description...&lt;/p&gt;',
         'description_class' => 'my-custom-description-class',
     )
@@ -50,7 +48,7 @@ echo wpca_get_component(
                 echo wpca_get_component(
                     'hero',
                     array(
-                        'title'             => __('Hero with image'),
+                        'title'             => '<h1>Hero with image</h1>',
                         'image_id'          => 5,
                         'image_format'      => 'full',
                         'description'       => '<p>My custom hero description n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
@@ -72,8 +70,7 @@ echo wpca_get_component(
                 echo wpca_get_component(
                     'hero',
                     array(
-                        'title'                 => __('My custom hero title'),
-                        'title_block_format'    => 'h4',
+                        'title'                 => '<h4>My custom hero title</h4>',
                         'description'           => '<p>My custom hero description n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
                         'container'             => 'a',
                         'link'                  => 'https://google.se',
@@ -84,8 +81,7 @@ echo wpca_get_component(
 echo wpca_get_component(
     'hero',
     array(
-        'title'                 => 'My custom hero title',
-        'title_block_format'    => 'h4',
+        'title'                 => '&lt;h4&gt;My custom hero title&lt;/h4&gt;',
         'description'           => '&lt;p&gt;My custom hero description...&lt;/p&gt;',
         'container'             => 'a',
         'link'                  => 'https://google.se',
@@ -97,7 +93,7 @@ echo wpca_get_component(
                 echo wpca_get_component(
                     'hero',
                     array(
-                        'title'         => __('Hero without description'),
+                        'title'         => '<h1>Hero without description</h1>',
                         'container'     => 'a',
                         'link'          => 'this is not a link',
                     )

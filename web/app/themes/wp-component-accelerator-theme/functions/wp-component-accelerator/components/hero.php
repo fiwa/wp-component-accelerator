@@ -15,9 +15,8 @@ $defaults = array(
     'container'                 => 'div',
     'container_class'           => 'Hero',
     'content_class'             => 'Hero__content',
-    'title'                     => __('Hero default title'),
-    'title_block_format'        => 'h1',
-    'title_class'               => 'Hero__title',
+    'title'                     => '<h1 class="Hero__heading-title">Hero default title</h1>',
+    'title_container_class'     => 'Hero__heading',
     'image_container'           => 'figure',
     'image_container_class'     => 'Hero__image',
     'image_id'                  => '',
@@ -48,10 +47,9 @@ if ('a' === $args['container'] && wp_http_validate_url($args['link'])) {
 
 // Component content
 $title = sprintf(
-    '<%1$s class="%2$s">%3$s</%1$s>',
-    esc_attr($args['title_block_format']),
-    esc_attr($args['title_class']),
-    esc_html($args['title']),
+    '<div class="%1$s">%2$s</div>',
+    esc_attr($args['title_container_class']),
+    $args['title'],
 );
 
 $description = sprintf(
@@ -73,7 +71,14 @@ if ($image_el) {
 }
 ?>
 
-<<?php echo sprintf('%1$s %2$s class="%3$s"', esc_attr($args['container']), $args['link'], esc_attr($args['container_class'])); ?>>
+<?php
+echo sprintf(
+    '<%1$s %2$s class="%3$s">',
+    esc_attr($args['container']),
+    $args['link'],
+    esc_attr($args['container_class'])
+);
+?>
 
     <div class="<?php echo esc_attr($args['content_class']); ?>">
         <?php echo $title; ?>
@@ -82,4 +87,9 @@ if ($image_el) {
 
     <?php echo $image; ?>
 
-</<?php echo esc_attr($args['container']); ?>>
+<?php
+echo sprintf(
+    '</%s>',
+    esc_attr($args['container'])
+);
+?>

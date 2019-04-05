@@ -13,17 +13,17 @@
     z-index: 2;
   }
 
-  &__title {
-    color: #c2c7cc;
-
-    .Hero--has-image & {
-        color: #fff;
+  &__heading {
+    &-title {
+      color: #c2c7cc;
     }
 
-    // Remove styling from Twenty Nineteen theme
-    &::before,
-    &::after {
-        display: none !important;
+    h1,
+    h2 {
+      &::before,
+      &::after {
+          display: none !important;
+      }
     }
   }
 
