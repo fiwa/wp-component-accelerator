@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * Load function parts
+ */
+require_once 'functions/helpers.php';
+
+/**
  * Get component
  *
  * @param string $type

@@ -70,6 +70,96 @@ echo wpca_get_component(
                 echo wpca_get_component(
                     'hero',
                     array(
+                        'title'             => '<h1>Hero with video</h1>',
+                        'description'       => '<p>Poster<br>Source: mp4, webm, ogv</p>',
+                        'image_id'          => 5,
+                        'video_id'          => array(6, 7, 8),
+                    )
+                );
+                ?>
+
+<pre>
+echo wpca_get_component(
+    'hero',
+    array(
+        ...
+        'image_id'          => 5,
+        'video_id'          => array(6, 7, 8),
+    )
+);
+</pre>
+
+                <?php
+                echo wpca_get_component(
+                    'hero',
+                    array(
+                        'title'             => '<h1>Hero with video</h1>',
+                        'description'       => '<p>Run once</p>',
+                        'video_id'          => array(6, 7),
+                        'video_loop'        => false,
+                    )
+                );
+                ?>
+
+<pre>
+echo wpca_get_component(
+    'hero',
+    array(
+        ...
+        'video_id'          => array(6, 7),
+        'video_loop'        => false,
+    )
+);
+</pre>
+
+
+                <?php
+                echo wpca_get_component(
+                    'hero',
+                    array(
+                        'title'             => '<h1>Hero with video</h1>',
+                        'description'       => '<p>Invalid video source</p>',
+                        'video_id'          => array(5, 6),
+                    )
+                );
+                ?>
+
+<pre>
+echo wpca_get_component(
+    'hero',
+    array(
+        ...
+         'video_id'         => array(5, 6),
+    )
+);
+</pre>
+
+                <?php
+                echo wpca_get_component(
+                    'hero',
+                    array(
+                        'title'             => '<h1>Hero with invalid video IDs</h1>',
+                        'description'       => '<p>Invalid video sources</p>',
+                        'image_id'          => 5,
+                        'video_id'         => array(6, 71),
+                    )
+                );
+                ?>
+
+<pre>
+echo wpca_get_component(
+    'hero',
+    array(
+        ..
+         'video_id'         => array(6, 71),
+    )
+);
+</pre>
+
+                <?php
+                echo wpca_get_component(
+                    'hero',
+                    array(
                         'title'                 => '<h4>My custom hero title</h4>',
                         'description'           => '<p>My custom hero description n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
                         'container'             => 'a',

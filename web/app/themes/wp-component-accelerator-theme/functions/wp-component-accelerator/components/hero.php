@@ -21,6 +21,11 @@ $defaults = array(
     'image_container_class'     => 'Hero__image',
     'image_id'                  => '',
     'image_format'              => 'large',
+    'video_id'                  => array(),
+    'video_autoplay'            => 'autoplay',
+    'video_muted'               => 'muted',
+    'video_loop'                => 'loop',
+    'video_preload'             => 'auto',
     'description'               => '',
     'description_class'         => 'Hero__description',
     'link'                      => '',
@@ -58,17 +63,32 @@ $description = sprintf(
     $args['description'],
 );
 
-$image = $defaults['image_id'];
-$image_el = wp_get_attachment_image(absint($args['image_id']), esc_attr($args['image_format']));
-if ($image_el) {
-    $image = sprintf(
-        '<%1$s class="%2$s">%3$s</%1$s>',
-        esc_attr($args['image_container']),
-        esc_attr($args['image_container_class']),
-        $image_el
-    );
-    $args['container_class'] .= ' '. $args['container_class'] . '--has-image';
+$media_object = '';
+if (!empty($args['video_id'])) {
+    $args['poster'] = wp_get_attachment_url(absint($args['image_id']));
+
+    $video = wpca_get_video_tag($args['video_id'], $args);
+
+    if ('success' === $video['status']) {
+        $args['container_class'] .= ' '. $args['container_class'] . '--has-video';
+        $media_object = $video['html'];
+    } else {
+        $image = wpca_get_image_tag($args);
+
+        if ('success' === $image['status']) {
+            $args['container_class'] .= ' '. $args['container_class'] . '--has-image';
+            $media_object = $image['html'];
+        }
+    }
+} else {
+    $image = wpca_get_image_tag($args);
+
+    if ('success' === $image['status']) {
+        $args['container_class'] .= ' '. $args['container_class'] . '--has-image';
+        $media_object = $image['html'];
+    }
 }
+
 ?>
 
 <?php
@@ -85,7 +105,7 @@ echo sprintf(
         <?php echo $description; ?>
     </div>
 
-    <?php echo $image; ?>
+    <?php echo $media_object; ?>
 
 <?php
 echo sprintf(
