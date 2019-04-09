@@ -17,3 +17,10 @@ function wpca_get_component($type = '', $args = array()) {
         require $template_path;
     }
 }
+
+/**
+ * Enqueue stylesheets
+ */
+add_action('wp_enqueue_scripts', function() {
+    wp_enqueue_style('wpca-style', get_stylesheet_directory_uri() . '/functions/wp-component-accelerator/style.css');
+});
