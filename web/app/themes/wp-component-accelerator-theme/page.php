@@ -26,8 +26,8 @@ get_header();
                         'container_class'   => 'my-custom-container-class',
                         'content_class'     => 'my-custom-content-class',
                         'title'             => '<h1 class="my-custom-title-class">My custom hero title</h1>',
-                        'description'       => '<p>My custom hero description n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
-                        'description_class' => 'my-custom-description-class',
+                        'body'              => '<p>My custom hero body n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
+                        'body_class'        => 'my-custom-body-class',
                     )
                 );
                 ?>
@@ -38,8 +38,8 @@ echo wpca_get_component(
         'container_class'   => 'my-custom-container-class',
         'content_class'     => 'my-custom-content-class',
         'title'             => '&lt;h1&gt; class="my-custom-title-class">My custom hero title&lt;/h1&gt;',
-        'description'       => '&lt;p&gt;My custom hero description...&lt;/p&gt;',
-        'description_class' => 'my-custom-description-class',
+        'body'              => '&lt;p&gt;My custom hero body...&lt;/p&gt;',
+        'body_class'        => 'my-custom-body-class',
     )
 );
 </pre>
@@ -51,7 +51,7 @@ echo wpca_get_component(
                         'title'             => '<h1>Hero with image</h1>',
                         'image_id'          => 5,
                         'image_format'      => 'full',
-                        'description'       => '<p>My custom hero description n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
+                        'body'              => '<p>My custom hero body n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
                     )
                 );
                 ?>
@@ -71,7 +71,7 @@ echo wpca_get_component(
                     'hero',
                     array(
                         'title'             => '<h1>Hero with video</h1>',
-                        'description'       => '<p>Poster<br>Source: mp4, webm, ogv</p>',
+                        'body'              => '<p>Poster<br>Source: mp4, webm, ogv</p>',
                         'image_id'          => 5,
                         'video_id'          => array(6, 7, 8),
                     )
@@ -94,7 +94,7 @@ echo wpca_get_component(
                     'hero',
                     array(
                         'title'             => '<h1>Hero with video</h1>',
-                        'description'       => '<p>Run once</p>',
+                        'body'              => '<p>Run once</p>',
                         'video_id'          => array(6, 7),
                         'video_loop'        => false,
                     )
@@ -118,7 +118,7 @@ echo wpca_get_component(
                     'hero',
                     array(
                         'title'             => '<h1>Hero with video</h1>',
-                        'description'       => '<p>Invalid video source</p>',
+                        'body'              => '<p>Invalid video source</p>',
                         'video_id'          => array(5, 6),
                     )
                 );
@@ -139,9 +139,9 @@ echo wpca_get_component(
                     'hero',
                     array(
                         'title'             => '<h1>Hero with invalid video IDs</h1>',
-                        'description'       => '<p>Invalid video sources</p>',
+                        'body'              => '<p>Invalid video sources</p>',
                         'image_id'          => 5,
-                        'video_id'         => array(6, 71),
+                        'video_id'          => array(6, 71),
                     )
                 );
                 ?>
@@ -161,7 +161,7 @@ echo wpca_get_component(
                     'hero',
                     array(
                         'title'                 => '<h4>My custom hero title</h4>',
-                        'description'           => '<p>My custom hero description n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
+                        'body'                  => '<p>My custom hero body n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
                         'container'             => 'a',
                         'link'                  => 'https://google.se',
                     )
@@ -172,7 +172,7 @@ echo wpca_get_component(
     'hero',
     array(
         'title'                 => '&lt;h4&gt;My custom hero title&lt;/h4&gt;',
-        'description'           => '&lt;p&gt;My custom hero description...&lt;/p&gt;',
+        'body'                  => '&lt;p&gt;My custom hero body...&lt;/p&gt;',
         'container'             => 'a',
         'link'                  => 'https://google.se',
     )
@@ -183,7 +183,7 @@ echo wpca_get_component(
                 echo wpca_get_component(
                     'hero',
                     array(
-                        'title'         => '<h1>Hero without description</h1>',
+                        'title'         => '<h1>Hero without body</h1>',
                         'container'     => 'a',
                         'link'          => 'this is not a link',
                     )
@@ -196,6 +196,52 @@ echo wpca_get_component(
         ...
         'container'     => 'a',
         'link'          => 'this is not a link',
+    )
+);
+</pre>
+
+                <?php
+                echo wpca_get_component(
+                    'rich-list-item',
+                    array(
+                        'title'         => '<h1>Rich list item</h1>',
+                        'body'          => '<p>My custom hero body n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
+                        'image_id'      => 5,
+                    )
+                );
+                ?>
+
+<pre>
+echo wpca_get_component(
+    'rich-list-item',
+    array(
+        ...
+        'image_id'      => 5,
+    )
+);
+</pre>
+
+                <?php
+                echo wpca_get_component(
+                    'rich-list-item',
+                    array(
+                        'title'                     => '<h1>Rich list item</h1>',
+                        'body'                      => '<p>My custom hero body n ac pellentesque urna. Ut id posuere lorem, at aliquet libero. In vitae dui eros. Duis cursus sapien nec erat finibus volutpat. Nulla placerat dui felis, non gravida ante pretium nec. Vestibulum lorem massa, sodales vitae maximus non, lacinia eu est. Suspendisse sodales dui odio, nec eleifend lectus faucibus at.</p>',
+                        'image_id'                  => 5,
+                        'content_class'             => 'Rich-list-item__content order-1',
+                        'image_class'               => 'Rich-list-item__image order-2',
+                    )
+                );
+                ?>
+
+<pre>
+echo wpca_get_component(
+    'rich-list-item',
+    array(
+        ...
+        'image_id'               => 5,
+        'content_class'          => 'Rich-list-item__content order-1',
+        'image_class'            => 'Rich-list-item__image order-2',
     )
 );
 </pre>

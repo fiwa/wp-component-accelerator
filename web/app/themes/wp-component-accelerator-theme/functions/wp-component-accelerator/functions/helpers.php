@@ -14,6 +14,44 @@ if (!function_exists('pr_log')) {
 }
 
 /**
+ * Media object (returns image or video)
+ */
+function wpca_media_object($args = array()) {
+    $output = array(
+        'status'                   => 'error',
+        'html'                     => '',
+        'container_class'          => '',
+    );
+
+    if (!empty($args['video_id'])) {
+        $args['poster'] = wp_get_attachment_url(absint($args['image_id']));
+
+        $video = wpca_get_video_tag($args['video_id'], $args);
+
+        if ('success' === $video['status']) {
+            $output['container_class'] = $args['container_class'] . '--has-video';
+            $output['html'] = $video['html'];
+        } else {
+            $image = wpca_get_image_tag($args);
+
+            if ('success' === $image['status']) {
+                $output['container_class'] = $args['container_class'] . '--has-image';
+                $output['html'] = $image['html'];
+            }
+        }
+    } else {
+        $image = wpca_get_image_tag($args);
+
+        if ('success' === $image['status']) {
+            $output['container_class'] = $args['container_class'] . '--has-image';
+            $output['html'] = $image['html'];
+        }
+    }
+
+    return $output;
+}
+
+/**
  * Post mime type
  */
 function wpca_mime_type($mime_type = '') {
